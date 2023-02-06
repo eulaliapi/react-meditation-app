@@ -1,0 +1,22 @@
+.Error {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__img {
+    width: 200px;
+}
+
+.error__btn:any-link {
+    color: var(--clr-text);
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 576px) {
+    .error_img {
+        width: 400px;
+    }
+}

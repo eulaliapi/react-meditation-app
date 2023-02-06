@@ -1,0 +1,121 @@
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100vw;
+    height: 80vh;
+    margin: 20px 0;
+}
+
+.main__btn {
+    font-family: 'Barlow', sans-serif;
+    color: var(--clr-text);
+    border: 1px solid var(--clr-text);
+    border-radius: 10px;
+    width: 84px;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.main__btn:hover{
+    outline: 1px solid var(--clr-text);
+}
+
+.main__btn-wrapper,
+.main__icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main__play-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__play-btn {
+    border: none;
+    font-size: 8rem;
+    cursor: pointer;
+}
+
+.main__time__wrapper {
+    width:250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main__time-bar {
+    /* width: 200px; */
+    height: 10px;
+    border-radius: 20px;
+    background-color: var(--clr-text);
+}
+
+.main__time-restart {
+    font-family: 'Barlow', sans-serif;
+    color: var(--clr-text);
+    border: 1px solid var(--clr-text);
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.main__time-restart:hover {
+    outline: 1px solid var(--clr-text);
+}
+
+.main__play-btn {
+    background: transparent;
+}
+
+.main__play-btn > svg {
+    color: var(--clr-text);
+    pointer-events: none;
+}
+
+.icon > svg {
+    pointer-events: none;
+}
+
+.active {
+    border: none;
+    pointer-events: none;
+    background-color: var(--clr-tertiary);
+    box-shadow: 0px 0px 15px -2px var(--clr-tertiary);
+}
+
+.active:hover {
+    outline:none;
+    cursor: default;
+}
+
+@media screen and (min-width: 576px) {
+    .main__btn {
+        width: 90px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .Main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .main__btn-wrapper,
+    .main__icon-wrapper {
+        flex-direction: column;
+    }
+
+    .main__btn {
+        width: 100px;
+    }
+
+    .main__play-wrapper {
+        justify-content: center;
+    }
+}
