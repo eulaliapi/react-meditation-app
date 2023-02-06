@@ -16,7 +16,7 @@ const Footer = () => {
        try {
 
         const ACCESS_TOKEN = Cookies.get('access-token');
-
+        console.log(ACCESS_TOKEN);
         await axios.get(LOGOUT_URL, 
             {
                 headers: {
