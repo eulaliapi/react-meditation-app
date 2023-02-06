@@ -59,7 +59,8 @@ const Login = () => {
             );
 
             const accessToken = response?.data;
-            Cookies.set("access-token", accessToken);
+            console.log(accessToken);
+            Cookies.set("access-token", accessToken.value);
             setAuth({user, accessToken});
             setMsg("Successfully logged in");
 
