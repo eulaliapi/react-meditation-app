@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import Cookies from 'js-cookie';
 import axios from '../../api/axios';
 import useAuth from '../../hooks/useAuth';
 import './Form.css';
@@ -59,8 +58,6 @@ const Login = () => {
             );
 
             const accessToken = response?.data;
-            console.log(accessToken);
-            Cookies.set("access-token", accessToken.value);
             setAuth({user, accessToken});
             setMsg("Successfully logged in");
 

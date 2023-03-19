@@ -1,33 +1,30 @@
 import {useNavigate, useLocation} from 'react-router-dom';
-import Cookies from 'js-cookie'
 import axios from '../../api/axios';
+import useAuth from '../../hooks/useAuth';
 import './Footer.css';
 import {FaGithub} from 'react-icons/fa';
 
 const LOGOUT_URL = '/logout';
 
 const Footer = () => {
+    const authHook = useAuth(); 
 
     const location = useLocation();
     const navigate = useNavigate();
 
     const handleLogout = async () => {
-        
+        const accessToken = authHook.auth.accessToken["access_token"];
        try {
-
-        const ACCESS_TOKEN = Cookies.get('access-token');
-        console.log(ACCESS_TOKEN);
         await axios.get(LOGOUT_URL, 
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + ACCESS_TOKEN,
+                    'Authorization': 'Bearer ' + accessToken,
                 },
                 withCredentials: true,
             }
         );
 
-        Cookies.remove('access-token');
         navigate("/");
        } catch (err) {
             console.log(err);
